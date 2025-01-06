@@ -22,8 +22,9 @@ export class PokemonService {
     return this.http.get<object>(url)
   }
 
-  getInfoPokemon(config: Config){
-    return this.http.get<object>(config.url)
+  getInfoPokemon(config: Config, name: string){
+    const url = `${config.url}${name}/`
+    return this.http.get<object>(url)
   }
 
 }
