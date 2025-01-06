@@ -1,0 +1,26 @@
+<div class="pokemon-card">
+  <div class="pokemon-card__container aqua">
+    <h2 class="pokemon-card__name">{{ pokemon.name }}</h2>
+    <div class="pokemon-card__image">
+      <img [src]="pokemon.url" alt="{{ pokemon.name }}'">
+    </div>
+
+    <div class="pokemon-card__details">
+      <h1 class="pokemon-card__details-title">Habilidades: </h1>
+      @for (ability of pokemon.info.abilities; track $index) {
+        <ul class="pokemon-card__abilities-list">
+          <li class="pokemon-card__abilities-item">
+            <div class="pokemon-card__ability-icon">
+              <div class="pokemon-card--star"></div>
+            </div>
+            <p class="pokemon-card__ability-name">{{ability.ability.name}}</p>
+          </li>
+        </ul>
+
+    }
+    </div>
+    <button (click)="openModal()" class="pokemon-card__button" >
+      Ver info
+    </button>
+  </div>
+</div>
