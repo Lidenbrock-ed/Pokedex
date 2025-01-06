@@ -1,4 +1,5 @@
 <div class="home-page">
+  <app-header></app-header>
   <div class="home-page__cards-container">
     @for (pokemon of pokemons() ; track $index; let position = $index) {
       <app-card class="home-page__card"
