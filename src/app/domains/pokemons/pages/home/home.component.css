@@ -1,0 +1,19 @@
+.home-page {
+  align-items: center;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+  width: 100vw;
+}
+
+.home-page__cards-container {
+  border-radius: 27px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 20px;
+  min-width: 300px;
+  width: 90%;
+}
