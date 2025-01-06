@@ -1,0 +1,9 @@
+<div class="home-page">
+  <div class="home-page__cards-container">
+    @for (pokemon of pokemons() ; track $index; let position = $index) {
+      <app-card class="home-page__card"
+      [pokemon]="pokemon"
+      ></app-card>
+    }
+  </div>
+</div>
