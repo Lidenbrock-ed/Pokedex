@@ -1,0 +1,74 @@
+.error-page {
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-page__container {
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: center;
+}
+
+.error-page__title {
+  margin-bottom: 1rem;
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: #1d4ed8;
+}
+
+.error-page__subtitle {
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.error-page__message {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #6b7280;
+}
+
+.error-page__button {
+  display: inline-flex;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.error-page__button:hover {
+  background-color: #0056b3;
+}
+
+.error-page__button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+  .error-page__title {
+      font-size: 6.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .error-page__subtitle {
+      font-size: 2.25rem;
+  }
+}
