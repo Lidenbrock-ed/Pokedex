@@ -2,8 +2,8 @@ export interface Pokemon {
   id: number;
   name: string;
   url: string;
-  info: {
-    abilities: Abilities[];
+  info?: {
+    abilities?: Abilities[];
     base_experience?: number;
     forms?: Array<object>;
     game_indices?: Array<object>;
