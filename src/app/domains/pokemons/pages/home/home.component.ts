@@ -27,7 +27,6 @@ export class HomeComponent {
         next: (res: any) => {
           const pokemonsData = res.results;
           pokemonsData.map( (pokemon: any) => {
-            console.log(pokemon)
             this.pokemonService.getInfoPokemon(reqConfig, pokemon.name)
             .subscribe( {
               next: ( resp: any) => {
