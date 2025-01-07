@@ -16,9 +16,9 @@ export class PokemonService {
   }
 
   getPokemonsList(config: Config) {
-    const offset = this.getRandomNumber(1,500)
+    const offset = this.getRandomNumber(1,1302)
     const limit = 30;
-    const url = `${config.url}?offset=${offset}limit=${limit}`
+    const url = `${config.url}?offset=${offset}&limit=${limit}`
     return this.http.get<object>(url)
   }
 
@@ -27,4 +27,9 @@ export class PokemonService {
     return this.http.get<object>(url)
   }
 
+  getReqConfig(): Config{
+    return {
+      url: 'https://pokeapi.co/api/v2/pokemon/'
+    }
+  }
 }
