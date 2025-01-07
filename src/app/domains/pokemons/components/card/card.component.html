@@ -1,26 +1,26 @@
-<div class="pokemon-card">
-  <div class="pokemon-card__container aqua">
-    <h2 class="pokemon-card__name">{{ pokemon.name }}</h2>
-    <div class="pokemon-card__image">
-      <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id + '.png'" alt="{{ pokemon.name }}'">
-    </div>
+<article class="pokemon-card">
+  <img class="pokemon-card__image" [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id + '.png'" alt={{pokemon.name}}>
+  <h1 class="pokemon-card__name">{{pokemon.name}}</h1>
 
-    <div class="pokemon-card__details">
-      <h1 class="pokemon-card__details-title">Habilidades: </h1>
-      @for (ability of pokemon.abilities; track $index) {
-        <ul class="pokemon-card__abilities-list">
-          <li class="pokemon-card__abilities-item">
-            <div class="pokemon-card__ability-icon">
-              <div class="pokemon-card--star"></div>
-            </div>
-            <p class="pokemon-card__ability-name">{{ability.ability.name}}</p>
-          </li>
-        </ul>
+  <div class="pokemon-card__details">
+    <section class="pokemon-card__type">
+      <h2 class="pokemon-card__section-title">Type</h2>
+      <ul class="pokemon-card__type-list">
+        @for (type of pokemon.types; track $index; let position = $index) {
+          <li>{{type?.type?.name}}</li>
+        }
+      </ul>
+    </section>
 
-    }
-    </div>
-      <button [routerLink]="['/pokemon', pokemon.name]" (click)="openModal()" class="pokemon-card__button" >
-        Ver info
-      </button>
+    <section class="pokemon-card__abilities">
+      <h2 class="pokemon-card__section-title">Abilities</h2>
+      <ul class="pokemon-card__abilities-list">
+        @for (ability of pokemon.abilities; track $index; let position = $index) {
+          <li>{{ability?.ability?.name}}</li>
+        }
+      </ul>
+    </section>
   </div>
-</div>
+
+  <a class="pokemon-card__button">See Details</a>
+</article>
