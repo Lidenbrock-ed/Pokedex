@@ -1,10 +1,11 @@
 import { Component, signal, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLinkWithHref } from '@angular/router';
 import { Pokemon } from '../../../entities/pokemon.model';
 
 @Component({
   selector: 'app-card',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLinkWithHref],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
 })

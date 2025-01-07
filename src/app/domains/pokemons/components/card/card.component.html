@@ -19,8 +19,8 @@
 
     }
     </div>
-    <button (click)="openModal()" class="pokemon-card__button" >
-      Ver info
-    </button>
+      <button [routerLink]="['/pokemon', pokemon.name]" (click)="openModal()" class="pokemon-card__button" >
+        Ver info
+      </button>
   </div>
 </div>
