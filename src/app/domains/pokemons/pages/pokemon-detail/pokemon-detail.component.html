@@ -1,0 +1,56 @@
+<div class="modal-container" [class.modal-container--active]="modalActive">
+  <div class="modal">
+    <h2 class="modal__title">{{pokemon()?.name}} N° {{pokemon()?.id}}</h2>
+    <div class="modal__content">
+      <div class="modal__left">
+        <img class="modal__image" [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon()?.id + '.png'" alt="Pokemon">
+      </div>
+      <div class="modal__right">
+
+        <section class="modal__general-info">
+          <h3 class="modal__section-title">General Information</h3>
+          <div class="general-info__item">Height: {{pokemon()?.height}} m</div>
+          <div class="general-info__item">Weight: {{pokemon()?.weight}} kg</div>
+          <div class="general-info__item">Base Experience: {{pokemon()?.base_experience}}</div>
+        </section>
+
+        <section class="modal__abilities">
+          <h3 class="modal__section-title">Abilities</h3>
+          <div class="modal__info">
+            @for (ability of pokemon()?.abilities ; track $index; let position = $index) {
+              <div class="abilities-info__item">{{ability?.ability?.name}}</div>
+            }
+            </div>
+        </section>
+
+        <section class="modal__stats">
+          <h3 class="modal__section-title">Stats</h3>
+          <div class="modal__stats">
+            <div class="stats__stat">
+              <span class="stat__name">HP</span>
+              <div class="stat__bar">
+                <span class="stat__bar--hp"></span>
+              </div>
+              <span class="stat__value">{{pokemon()?.stats?.[0]?.base_stat ?? '0'}}</span>
+            </div>
+            <div class="stats__stat stat">
+              <span class="stat__name">Attack</span>
+              <div class="stat__bar">
+                <span class="stat__bar--attack"></span>
+              </div>
+              <span class="stat__value">{{pokemon()?.stats?.[1]?.base_stat ?? '0'}}</span>
+            </div>
+            <div class="stats__stat stat">
+              <span class="stat__name">Defense</span>
+              <div class="stat__bar">
+                <span class="stat__bar--defense"></span>
+              </div>
+              <span class="stat__value">{{pokemon()?.stats?.[2]?.base_stat ?? '0'}} </span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <button (click)="closeModalHandler(pokemon()!)" class="modal__button">Close</button>
+  </div>
+</div>
