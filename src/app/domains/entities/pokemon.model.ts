@@ -15,7 +15,7 @@ export interface Pokemon {
   species?: Array<object>;
   sprites?: Sprites;
   stats?: Array<object>;
-  types?: Array<object>;
+  types?: Types[];
   weight?: number;
 }
 
@@ -47,4 +47,11 @@ export interface Other {
   home?: object | null;
   "official-artwork"?: object | null;
   "show-down"?: object | null;
+}
+
+export interface Types {
+  type: {
+    name: string,
+    url: string
+  }
 }
