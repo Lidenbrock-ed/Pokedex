@@ -19,7 +19,7 @@ export class HomeComponent {
 
   async setPokemonsData(): Promise<void> {
     try{
-      const reqConfig: Config = this.getReqConfig();
+      const reqConfig: Config = this.pokemonService.getReqConfig()
       const pokemonsResults: any[] = [];
 
       this.pokemonService.getPokemonsList(reqConfig)
@@ -32,7 +32,7 @@ export class HomeComponent {
               next: ( resp: any) => {
                 pokemonsResults.push({
                   ...pokemon,
-                  info: resp,
+                  ...resp,
                 })
               },
               error: (error:any) => {
@@ -54,12 +54,6 @@ export class HomeComponent {
 
   async ngOnInit() {
     await this.setPokemonsData();
-  }
-
-  getReqConfig(): Config{
-    return {
-      url: 'https://pokeapi.co/api/v2/pokemon/'
-    }
   }
 
 }

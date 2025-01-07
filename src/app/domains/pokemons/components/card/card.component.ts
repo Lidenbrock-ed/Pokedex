@@ -9,7 +9,26 @@ import { Pokemon } from '../../../entities/pokemon.model';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  @Input({ required: true}) pokemon: Pokemon = { id: 0, name: '', url: '', info: { id: 0, name: '', abilities: [], base_experience: 0, forms: [], game_indices: [], height: 0, moves: [], weight: 0 } }
+  @Input({ required: true}) pokemon: Pokemon = {
+    url: '',
+    abilities: [],
+    base_experience: 0,
+    forms: [],
+    game_indices: [],
+    height: 0,
+    held_items: [],
+    id: 0,
+    is_default: true,
+    location_area_encounters:'',
+    moves: [],
+    name: '',
+    order: 0,
+    species: [],
+    sprites: {},
+    stats: [],
+    types: [],
+    weight: 0
+  }
 
   pokemons = signal<Pokemon[]>([])
 
