@@ -1,11 +1,11 @@
-import { Component, signal, Input } from '@angular/core';
+import { Component, signal, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLinkWithHref } from '@angular/router';
 import { Pokemon } from '../../../entities/pokemon.model';
 
 @Component({
   selector: 'app-card',
-  imports: [CommonModule, RouterLinkWithHref],
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css',
 })
@@ -28,12 +28,15 @@ export class CardComponent {
     sprites: {},
     stats: [],
     types: [],
-    weight: 0
+    weight: 0,
+    modal_active:false
   }
+
+  @Output() modalOpened = new EventEmitter<Pokemon>();
 
   pokemons = signal<Pokemon[]>([])
 
-  openModal() {
-    //TODO
+  openModalHandler(pokemon: Pokemon) {
+    this.modalOpened.emit(pokemon);
   }
 }

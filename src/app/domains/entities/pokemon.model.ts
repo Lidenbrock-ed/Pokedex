@@ -17,6 +17,7 @@ export interface Pokemon {
   stats: Stats[];
   types: Types[];
   weight: number;
+  modal_active: boolean;
 }
 
 export interface Sprites {
