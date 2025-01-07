@@ -1,0 +1,187 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-container--active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-container--active .modal {
+  transform: scale(1);
+}
+
+.modal__title {
+  margin-bottom: 10px;
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.modal__content {
+  display: flex;
+  padding: 0px 10px;
+}
+
+.modal__left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.modal__right {
+  width: 50%;
+  padding: 0px 10px;
+}
+
+.modal__section-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #34495e;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal__general-info,
+.modal__abilities,
+.modal__stats {
+  margin: 15px 0;
+}
+
+.general-info__item, .abilities-info__item {
+  background: linear-gradient(145deg, #e0f7fa, #ffffff);
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #00796b;
+  margin: 5px 0;
+  text-transform: capitalize;
+  box-shadow: inset 1px 1px 5px #b2dfdb;
+}
+
+.stats__stat {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stat__name {
+  flex: 1;
+  text-align: left;
+  color: #34495e;
+}
+
+.stat__bar {
+  flex: 3;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+  overflow: hidden;
+  position: relative;
+  margin-right: 10px;
+}
+
+.stat__bar span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+}
+
+.stat__bar--hp {
+  background-color: #ff6b6b;
+  width: 70%;
+}
+
+.stat__bar--attack {
+  background-color: #f7b731;
+  width: 85%;
+}
+
+.stat__bar--defense {
+  background-color: #45aaf2;
+  width: 60%;
+}
+
+.stat__value {
+  width: 30px;
+  text-align: center;
+  color: #34495e;
+}
+
+.modal__button {
+  background: linear-gradient(145deg, #42a5f5, #64b5f6);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.modal__button:hover {
+  background-color: #1565c0;
+}
+
+.modal__image:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+@media (max-width: 480px) {
+
+  .modal__content {
+    flex-direction: column;
+  }
+  .modal__left, .modal__right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .modal__title {
+    font-size: 1.4rem;
+  }
+
+  .abilities-info__item, .general-info__item {
+    margin: 5px 0;
+  }
+}

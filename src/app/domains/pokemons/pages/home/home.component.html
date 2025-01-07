@@ -4,7 +4,20 @@
     @for (pokemon of pokemons() ; track $index; let position = $index) {
       <app-card class="home-page__card"
       [pokemon]="pokemon"
+      (modalOpened)="openModal($event)"
       ></app-card>
     }
   </div>
+  @if (selectedPokemon()?.modal_active) {
+    <app-pokemon-detail
+    [modalActive]="true"
+    [name]="selectedPokemon()?.name"
+    (modalClosed)="closeModal($event)">
+    </app-pokemon-detail>
+  } @else {
+    <app-pokemon-detail
+    [modalActive]="false"
+    [name]="selectedPokemon()?.name">
+    </app-pokemon-detail>
+  }
 </div>

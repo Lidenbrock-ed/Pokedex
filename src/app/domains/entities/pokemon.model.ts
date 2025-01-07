@@ -1,10 +1,10 @@
 export interface Pokemon {
   url: string;
-  abilities?: Abilities[];
+  abilities: Abilities[];
   base_experience?: number;
   forms?: Array<object>;
   game_indices?: Array<object>;
-  height?: number;
+  height: number;
   held_items?: Array<any>;
   id: number;
   is_default?: boolean;
@@ -13,10 +13,11 @@ export interface Pokemon {
   name: string;
   order?: number;
   species?: Array<object>;
-  sprites?: Sprites;
-  stats?: Array<object>;
-  types?: Types[];
-  weight?: number;
+  sprites: Sprites;
+  stats: Stats[];
+  types: Types[];
+  weight: number;
+  modal_active: boolean;
 }
 
 export interface Sprites {
@@ -47,6 +48,14 @@ export interface Other {
   home?: object | null;
   "official-artwork"?: object | null;
   "show-down"?: object | null;
+}
+
+export interface Stats {
+  base_stat: number,
+  stat: {
+    name: string,
+    url: string
+  }
 }
 
 export interface Types {
