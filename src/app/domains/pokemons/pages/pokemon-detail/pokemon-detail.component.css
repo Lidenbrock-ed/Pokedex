@@ -172,16 +172,57 @@
   .modal__content {
     flex-direction: column;
   }
-  .modal__left, .modal__right {
+  .modal__left,
+  .modal__right {
     width: 100%;
     padding: 0;
   }
 
   .modal__title {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 
-  .abilities-info__item, .general-info__item {
+  .abilities-info__item,
+  .general-info__item {
     margin: 5px 0;
+    height: 30px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+
+  .modal {
+    width: 80%;
+    height: 620px;
+    overflow: overlay;
+    padding: 5px 25px;
+  }
+
+  .modal__image {
+    width: 30%;
+  }
+
+  .modal__section-title{
+    font-size: 0.8rem;
+  }
+
+  .modal__stats {
+    font-size: 0.7rem;
+  }
+
+  .stat__bar {
+    flex: 2;
+    height: 8px;
+    margin-right: 5px;
+  }
+
+  .modal__button {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    margin:10px auto 0;
+  }
+
+  .modal__image:hover {
+    transform: scale(1.5);
+    filter: brightness(1.2);
   }
 }

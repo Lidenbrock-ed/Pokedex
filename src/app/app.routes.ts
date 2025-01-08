@@ -11,10 +11,6 @@ export const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:'pokemon/:name',
-    component: PokemonDetailComponent
-  },
-  {
     path: '**',
     component: NotFoundComponent
   },
